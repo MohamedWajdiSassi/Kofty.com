@@ -1,0 +1,62 @@
+<div *ngIf="productsLoaded">
+  <div class="section" >
+    <div class="container">
+      <div class="section-title text-center">
+        <h3>
+          Produits Présentés</h3>
+          <!--div class="row">
+              <input type="text" ([ngModel])="search">  
+          </div-->
+      </div>
+      <div>
+        <div class="row product-wrapper" >
+          <div class="col-19 col-md-4 col-lg-4 product" *ngFor="let p of produit">
+            <div class="product-img">
+              <a href="#">
+                <img img class=".imageClass" [src]="p.image" />
+                <!--<div class="product-sale">
+                  <h6 class="heading-uppercase">-25%</h6>
+                </div>
+                <div class="product-new">
+                  <span class="heading-uppercase">New</span>
+                </div>-->
+              </a>
+                <div class="product-img-hover" style="background-color: rgb(255,140,0) !important">
+                <h6 class="heading-uppercase" ><a class="btn" (click)="Addcart(p)"><i class="ti-shopping-cart"></i> Ajouter </a></h6>
+              </div>
+            </div><!-- end product-img -->
+            <div class="product-info">
+              <h6><a href="#">{{p.marqueProduit}}</a></h6>
+              <!-- Product Category -->
+              <ul class="list-horizontal">
+                <li><a href="#">{{p.typeProduit}}</a></li>
+                <li><a href="#">{{p.description}}</a></li>
+               
+              </ul>
+              
+                
+              
+              
+              <!-- Product Price -->
+              <div >
+                <h6> {{p.quantite}}</h6>
+              </div>
+              <!-- Add to Wishlist button -->
+              <a class="product-wishlist" href="#">
+                <i class="ti-heart"></i>
+              </a>
+              <!-- Product Rating -->
+              <div class="product-rating">
+                <span><i class="ti ti-star text-black-09"></i></span>
+                <span><i class="ti ti-star text-black-09"></i></span>
+                <span><i class="ti ti-star text-black-09"></i></span>
+                <span><i class="ti ti-star text-black-09"></i></span>
+                <span><i class="ti ti-star text-black-09"></i></span>
+              </div>
+            </div><!-- end product-info -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

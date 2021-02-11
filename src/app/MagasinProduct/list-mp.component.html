@@ -1,0 +1,196 @@
+
+<body data-preloader="2" class="loaded"  *ngIf="productsLoaded">
+ 
+    <div class="purchasenow">
+        <a class="button-circle button-circle-sm button-circle-dark" [routerLink]="['cart', 'divers']"><i class="ti-shopping-cart"></i></a>
+    </div>
+    
+    
+    <!-- end Fullscreen Search Form -->
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-7">
+                    <div class="table-responsive">
+                        <table class="product-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><h6 class="heading-uppercase no-margin">Produit</h6></th>
+                                    
+                                    <th scope="col"><h6 class="heading-uppercase no-margin">Quantité</h6></th>
+                                    
+                                    
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Table row 1 -->
+                                <tr  *ngFor="let mp of cart_mag; let i = index" >
+                                    <td class="cart-product-thumbnail">
+                                        <a href="#"><img img class=".imageClass" [src]="mp.prod.product.image" /></a>
+                                        <h6>{{mp.prod.product.description}}</h6>
+                                    </td>
+                                    <td>
+                                        <span>{{mp.Prix}}</span>
+                                    </td>
+                                    <td class="cart-product-quantity" >
+                                        <div class="product-quantity">
+                                            <button class="button-circle button-circle-xs button-circle-grey dec" (click)="Removecart(mp)"><i class="ti-minus"></i></button>
+                                            <input type="text" name="quantity" id="quantity" value="{{mp.prod.quantity}}">
+                                            <button class="button-circle button-circle-xs button-circle-grey inc" (click)="Addcart(mp)"><i class="ti-plus"></i></button>
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="cart-product-remove">
+                                        <button (click)="removeFromCart(i)"><i class="ti-close"></i></button>											
+                                    </td>
+                                </tr>
+                                <!-- Table row 2 -
+                                <tr>
+                                    <td class="cart-product-thumbnail">
+                                        <a href="#"><img src="../../assets/images/shop-sneakers-white-sm.jpg" alt=""></a>
+                                        <h6>White Sneakers</h6>
+                                    </td>
+                                    <td>
+                                        <span>$59</span>
+                                    </td>
+                                    <td class="cart-product-quantity">
+                                        <div class="product-quantity">
+                                            <button class="button-circle button-circle-xs button-circle-grey dec"><i class="ti-minus"></i></button>
+                                            <input type="text" name="quantity" id="quantity" value="1">
+                                            <button class="button-circle button-circle-xs button-circle-grey inc"><i class="ti-plus"></i></button>
+                                        </div>
+                                    </td>
+                                    <td class="cart-product-subtotal">
+                                        <span class="font-weight-bold">$59</span>
+                                    </td>
+                                    <td class="cart-product-remove">
+                                        <button><i class="ti-close"></i></button>											
+                                    </td>
+                                </tr>-->
+                            </tbody>
+                        </table>
+                    </div><!-- end table-responsive -->
+                    <!-- Coupon Form -->
+                    <!--<div class="row margin-top-30">
+                        <div class="col-12 col-sm-10 col-md-8">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter coupon code...">
+                                <span class="input-group-append">
+                                    <button class="btn btn-light" type="button">Apply Coupon</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end Coupon Form -->
+                </div>
+                  
+                <div class="col-12 col-lg-5">
+                    <div class="margin-bottom-30">
+                        <!--<select class="custom-select custom-select-lg select-fullwidth">
+                            <option selected="">Select your country</option>
+                            <option value="1">Australia</option>
+                            <option value="2">Brazil</option>
+                            <option value="3">Canada</option>
+                            <option value="4">France</option>
+                            <option value="5">German</option>
+                            <option value="6">India</option>
+                            <option value="7">Italy</option>
+                            <option value="8">Netherland</option>
+                            <option value="9">Mongolia</option>
+                            <option value="10">Turkey</option>
+                            <option value="11">Switzerland</option>
+                            <option value="12">United States of America</option>
+                        </select>-->
+                        <button class="btn btn-lg btn-light btn-block">Prix Total</button>
+                    </div>
+                    <div class="payment-detail-box">
+                        <h5 class="margin-bottom-20">Magasins :</h5>
+                     <ul *ngIf="!basic">
+                        <ul>
+                            <li class="row mt-3">
+                                <img class="sm-image col-4" src="../assets/images/Logo-carrefour-1-.jpg" >
+                                <div class="text-dark col-6 text-center"><b>{{m1}} dt</b></div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="row mt-3">
+                                    <img class="sm-image col-4" src="../assets/images/logo-geant1.jpg" >
+                                    <div class="text-dark col-6 text-center"><b>{{m2}} dt</b></div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="row mt-3">
+                                        <img class="sm-image col-4" src="../assets/images/aziza-logo1.jpg" >
+                                        <div class="text-dark col-6 text-center"><b>{{m3}} dt</b></div>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li class="row mt-3">
+                                            <img class="sm-image col-4" src="../assets/images/logo-mg.jfif" >
+                                            <div class="text-dark col-6 text-center"><b>{{m4}} dt</b></div>
+                                        </li>
+                                    </ul>
+                                        
+                          
+                        </ul>
+                        <ul *ngIf="basic">
+                            <ul *ngIf="totals[0].magasin == 'carrefour'">
+                                <li class="row mt-3">
+                                    <img class="sm-image col-4" src="../assets/images/Logo-carrefour-1-.jpg" >
+                                    <div class="text-dark col-6 text-center"><b>{{totals[0].total}} dt</b></div>
+                                </li>
+                            </ul>
+                            <ul *ngIf="totals[0].magasin == 'geant'">
+                                <li class="row mt-3">
+                                    <img class="sm-image col-4" src="../assets/images/logo-geant1.jpg" >
+                                    <div class="text-dark col-6 text-center"><b>{{totals[0].total}} dt</b></div>
+                                </li>
+                            </ul>
+                            <ul *ngIf="totals[0].magasin == 'aziza'">
+                                <li class="row mt-3">
+                                    <img class="sm-image col-4" src="../assets/images/aziza-logo1.jpg" >
+                                    <div class="text-dark col-6 text-center"><b>{{totals[0].total}} dt</b></div>
+                                </li>
+                            </ul>
+                            <ul *ngIf="totals[0].magasin == 'mg'">
+                                <li class="row mt-3">
+                                    <img class="sm-image col-4" src="../assets/images/logo-mg.jfif" >
+                                    <div class="text-dark col-6 text-center"><b>{{totals[0].total}} dt</b></div>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <a class="button button-xl button-dark button-fullwidth" href="/produit">Continuer Votre Achat</a>
+                    <div class="button button-xl button-dark button-fullwidth" (click)="clearCart()">Nouveau Panier</div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+
+ 
+
+    <!-- ***** JAVASCRIPTS ***** -->
+    <!-- Libraries -->
+    <script src="../../assets/plugins/jquery.min.js"></script>
+    <script src="../../assets/plugins/bootstrap/popper.min.js"></script>
+    <!-- Plugins -->
+    <script src="../../assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../../assets/plugins/appear.min.js"></script>
+    <script src="../../assets/plugins/easing.min.js"></script>
+    <script src="../../assets/plugins/retina.min.js"></script>
+    <script src="../../assets/plugins/countdown.min.js"></script>
+    <script src="../../assets/plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="../../assets/plugins/isotope.pkgd.min.js"></script>
+    <script src="../../assets/plugins/jarallax/jarallax.min.js"></script>
+    <script src="../../assets/plugins/jarallax/jarallax-video.min.js"></script>
+    <script src="../../assets/plugins/magnific-popup/magnific-popup.min.js"></script>
+    <script src="../../assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="../../assets/plugins/jquery.easypiechart.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUma4oJ7_6VbfGNdUYdv6VQ0Ph07Fz0k8"></script>
+    <script src="../../assets/plugins/gmaps.min.js"></script>
+    <!-- Scripts -->
+    <script src="../../assets/js/functions.min.js"></script>
+
+<div class="preloader preloader-2"><div><svg class="loader-circular" viewBox="25 25 50 50"><circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle></svg></div></div></body>

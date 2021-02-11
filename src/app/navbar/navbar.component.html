@@ -1,0 +1,173 @@
+<header>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="">
+          <img src="../assets/images/kofty.png" >
+        </a>
+        <ul class="nav m-auto">
+          <!-- dropdown link 1 -->
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link" href="#">Frais</a>
+            <ul class="dropdown-menu">
+              <li class="sub-dropdown">
+                <a [routerLink]="['/categorie', 'Frais', 'Lait', '']">Lait</a>
+                <div class="sub-dropdown-menu" style="left: 100%;">
+                  <a [routerLink]="['/categorie', 'Frais', 'Lait', 'Lait demi-écrémé']">Lait demi-écrémé</a>
+                  <a [routerLink]="['/categorie', 'Frais', 'Lait', 'Lait entier']">Lait entier</a>
+                  <a [routerLink]="['/categorie', 'Frais', 'Lait', 'Lait écrémé']">Lait écrémé</a>
+                  <a [routerLink]="['/categorie', 'Frais', 'Lait', 'Lait aromatisé']">Lait aromatisé</a>
+                </div>
+              </li>
+              <li class="sub-dropdown">
+                <a [routerLink]="['/categorie', 'Frais', 'Lben et Raib', '']">Lben et Raib</a> 
+              </li>
+              <li class="sub-dropdown">
+                <a [routerLink]="['/categorie', 'Frais', 'Fromages', '']">Fromages</a>
+              </li>
+              <li class="sub-dropdown">
+                <a [routerLink]="['/categorie', 'Frais', 'Beurres et crème', '']"> Beurres et crème</a>
+              </li>
+              <li class="sub-dropdown">
+                <a [routerLink]="['/categorie', 'Frais', 'Oeufs', '']">Oeufs </a>
+              </li>
+              <li class="sub-dropdown">
+                <a [routerLink]="['/categorie', 'Frais', 'Yaourt et desserts', '']">Yaourt et desserts</a>
+              </li>
+              <li class="sub-dropdown">
+                <a [routerLink]="['/categorie', 'Frais', 'Charcuteries', '']">Charcuteries</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+              
+              
+        <ul class="nav m-auto">
+          <!-- dropdown link 2 -->
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link" href="#">épicerie Salée</a>
+            <ul class="dropdown-menu">
+              <li class="sub-dropdown">
+                <a href="#">Pates,Riz,Farines</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Conserves</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Apéritifs</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Condiments et sauces</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Huiles</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav m-auto">
+          <!-- dropdown link 3 -->
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link" href="#">épicerie sucrée</a>
+            <ul class="dropdown-menu">
+              <li class="sub-dropdown">
+                <a href="#">Boissons du matin au du soire</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Petits déjeuners</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Bescuits</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Chocolatset confiseries</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Desseerts</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Paisseries industrielles</a>
+              </li>
+              </ul>
+          </li>
+        </ul>
+
+        <ul class="nav m-auto">
+          <!-- dropdown link 4 -->
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link" href="#">Boissons</a>
+            <ul class="dropdown-menu">
+              <li class="sub-dropdown">
+                <a href="#">Eaux</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Jus de fruits</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Colas,Boissons gazeuses</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav m-auto">
+          <!-- dropdown link 5 -->
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link" href="#">Hygiéne et Beaute</a>
+                <ul class="dropdown-menu">
+              <li class="sub-dropdown">
+                <a href="#">Essuie-tout</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">papiers et coton</a>
+              </li>
+              <li class="sub-dropdown">
+                  <a href="#">Déodorants</a>
+                </li>
+                <li class="sub-dropdown">
+                    <a href="#">Soins du corps et visage</a>
+                </li>
+                <li class="sub-dropdown">
+                    <a href="#">Hygiène dentaire</a>
+                </li>
+                <li class="sub-dropdown">
+                    <a href="#">Soins homme</a>
+                </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav m-auto">
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link" href="#">Nettoyage</a>
+            <ul class="dropdown-menu">
+              <li class="sub-dropdown">
+                <a href="#">Lessives</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Nettoyants maisons</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Nettoyants vaisselle</a>
+              </li>
+              <li class="sub-dropdown">
+                <a href="#">Ménage et accessoires</a>
+              </li>
+            </ul>
+          </li> 
+        </ul><!-- end nav -->
+        <!-- Nav Toggle button -->
+        <button class="nav-toggle-btn position-center">
+            <span class="lines"></span>
+        </button>
+            <!-- Icons -->
+        <ul class="list-horizontal-unstyled">
+          <li>
+            <a [routerLink]="['cart', 'divers']"><i class="ti-shopping-cart"></i></a>
+            <div class="badge badge-danger mb-5" style="position: absolute;">{{appComponent.cart}}</div>
+          </li>
+          <li><a href="#"><i class="ti-heart"></i></a></li>
+          <li><a class="search-toggle" href="#"><i class="ti-search"></i></a></li>
+        </ul>
+      </div><!-- end container -->
+    </nav>
+</header>
